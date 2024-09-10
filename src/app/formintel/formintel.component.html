@@ -1,0 +1,40 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="Formsubmit()">
+    <input
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+      (keypress)="onInputKeyPress($event)"
+      class="form-control" id="phone" type="tel" placeholder="Telephone" formControlName="tel" #telInput>
+    <button
+      type="submit"
+      class="btn btn-primary m-5"
+    >
+      Submit
+    </button>
+
+  </form>
+
+  <div
+    class="container-fluid"
+  >
+    {{ form.value | json }}
+
+  </div>
+  <div
+    class="container-fluid"
+  >
+    <h4>Country Code</h4>
+    <pre>
+    +{{ selectedCountryCode }}
+  </pre>
+
+    <h4>Phone Number</h4>
+    <pre>
+    {{ phoneNumber }}
+  </pre>
+
+  </div>
+
+
+</div>
+
